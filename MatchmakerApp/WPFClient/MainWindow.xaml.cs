@@ -34,7 +34,20 @@ namespace WPFClient
         {
             this.localClient = new SVC.Client();
             this.localClient.Name = loginTxtBoxUserName.Text.ToString();
+            
         }
+
+        private void chatButtonSend_Click(object sender, RoutedEventArgs e)
+        {
+            SVC.Message msg = new WPFClient.SVC.Message();
+            msg.Sender = this.localClient.Name;
+            msg.Content = chatTxtBoxWriteMsg.Text.ToString();
+        }
+
+        //private void chatButtonDisconnect_Click(object sender, RoutedEventArgs e)
+        //{
+
+        //}
     }
 }
     

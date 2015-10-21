@@ -33,8 +33,6 @@ namespace WPFHost
         {
             buttonStart.IsEnabled = false;
 
-            //Define base addresses so all endPoints can go under it
-
             Uri tcpAdrs = new Uri("net.tcp://" + textBoxIP.Text.ToString() + ":" +
                 textBoxPort.Text.ToString() + "/WPFHost/");
 

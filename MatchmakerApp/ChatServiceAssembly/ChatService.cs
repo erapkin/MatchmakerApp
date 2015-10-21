@@ -64,7 +64,7 @@ namespace ChatServiceAssembly
             return true;
         }
 
-        //BFT TODO: Is it sending or receiving? EAR: it writes the sent msg to the client, callback is on receive
+        //BFT TODO: Is it sending or receiving? EAR: renamed method: it will say the sent msg to the client, callback is on receive. 
         public void Say (Message msg)
         {
             lock (padLock)
@@ -76,7 +76,7 @@ namespace ChatServiceAssembly
             }
         }
 
-        //BFT TODO: Rename function to better describe what it does
+        //DG TODO:  possibly rename or have it return a boolean  (ex; check client for data) 
         public void IsWriting(Client client)
         {
             lock (padLock)
@@ -87,9 +87,10 @@ namespace ChatServiceAssembly
                 }
             }
         }
-
+        //DG TODO: change foreach loop and if statement into a containskey method from dictioanry
         public void Disconnect(Client client)
         {
+           
             foreach (Client cl in clients.Keys)
                 if (client.Name == cl.Name)
                 {
